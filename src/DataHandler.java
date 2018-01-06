@@ -55,8 +55,6 @@ public class DataHandler {
         //Edit bookrecord
         Main.bookRecords.add(bookIndex, currentRecord);
 
-
-
     }
 
 }
