@@ -15,10 +15,10 @@ public class Main {
 
         bookRecords = books.registerBook(bookRecords,"title1", "author1");
         dh.display(bookRecords);
-        userRecords = users.registerUser(userRecords,"username",5,new String[]{});
+        userRecords = users.registerUser(userRecords,"username1",5,"");
         dh.display(userRecords);
-        int bookIndex = books.bookExists("title1", "author1");
-        System.out.println("bookIndex :: " + bookIndex);
+        System.out.println("bookIndex :: " + books.bookExists("title1", "author1"));
+        System.out.println("userIndex :: " + Users.userExists("username1"));
         books.lendBook("title1", "author1","username1");
         books.returnBook("title1", "author1","");
         dh.display(bookRecords);
