@@ -21,7 +21,6 @@ public class Main {
         System.out.println("bookIndex :: " + bookIndex);
         books.lendBook("title1", "author1","username1");
         books.returnBook("title1", "author1","");
-        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&");
         dh.display(bookRecords);
         dh.display(userRecords);
     }
