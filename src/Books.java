@@ -8,11 +8,12 @@ public class Books {
      * Ability to add books to the system
      */
     public List registerBook(List<String[]> bookRecords, String title, String author){
-        System.out.println(bookRecords.size());
-        int index = bookRecords.size();
-        String[] element = new String[]{String.valueOf(index),title,author,"" };
+        if (bookExists(title, author) == 0) {
+            int index = bookRecords.size();
+            String[] element = new String[]{String.valueOf(index), title, author, ""};
 
-        bookRecords.add(index, element);
+            bookRecords.add(index, element);
+        }
         return bookRecords;
     }
 
