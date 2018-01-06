@@ -7,11 +7,12 @@ public class Users {
     /**
      * Ability to add users.csv to the system.
      */
-    public List registerUser(List<String[]> userRecords, String username, int books_allowed, String[] books_borrowed){
-        System.out.println(userRecords.size());
-        int index = userRecords.size();
-        String[] element = new String[]{String.valueOf(index),username, String.valueOf(books_allowed), books_borrowed.toString() };
-        userRecords.add(index, element);
+    public List registerUser(List<String[]> userRecords, String username, int books_allowed, String books_borrowed){
+        if(userExists(username) == 0) {
+            int index = userRecords.size();
+            String[] element = new String[]{String.valueOf(index), username, String.valueOf(books_allowed), books_borrowed};
+            userRecords.add(index, element);
+        }
         return userRecords;
     }
     /**
@@ -19,7 +20,7 @@ public class Users {
      */
     public static int booksAllowed(String username){
         for (String[] record : Main.userRecords) {
-            if (!record[2].contains("5")) {
+            if (!record[2].equals("books_allowed") && !record[2].contains("5")) {
                 return Integer.parseInt(record[2]);
             }
         }
